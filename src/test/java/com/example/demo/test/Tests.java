@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
@@ -17,31 +18,23 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-import static org.assertj.core.api.Assertions.*;
-
 import java.nio.charset.StandardCharsets;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SpringExtension.class)
+@AutoConfigureMockMvc
 @SpringBootTest
 public class Tests {
 
-    private MockMvc mockMvc;
+    @Autowired
+    MockMvc mockMvc;
 
     @Autowired
     WebApplicationContext webApplicationContext;
 
     @Autowired
     ObjectMapper objectMapper;
-
-    @BeforeEach
-    void setUp()    {
-        mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
-                .addFilters(new CharacterEncodingFilter(StandardCharsets.UTF_8.name()))
-                .build()
-        ;
-    }
 
     @DisplayName("CI Test")
     @Test
