@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{css/base.css}">
+    <meta name="_csrf" th:content="${_csrf.token}"/>
+    <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>회원가입</title>
+</head>
+<body>
+    <div class="form_border">
+        <h2>회원가입</h2>
+        <input type="email" class="base_input" id="sign_up_email" name="email">
+        <input type="password" class="base_input" id="sign_up_password" name="password">
+        <button class="btn" id="sign_up_btn">회원가입</button>
+        <a href="/sign-in" style="text-decoration: none">
+            <p style="color: white; font-size: 0.8rem; text-align: right">이미 아이디가 있으신가요?</p>
+        </a>
+    </div>
+
+    <script th:src="@{js/base.js}"></script>
+</body>
+</html>

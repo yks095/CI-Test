@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{css/base.css}">
+    <title>회원가입</title>
+</head>
+<body>
+<form class="form_border" action="#" th:action="@{/sign-up-form}" th:object="${accountDTO}" method="post">
+    <h2>회원가입 - II</h2>
+    <input type="email" th:field="*{email}" class="base_input">
+    <input type="password" th:field="*{password}" class="base_input">
+    <button class="btn">회원가입</button>
+    <a href="/sign-in" style="text-decoration: none">
+        <p style="color: white; font-size: 0.8rem; text-align: right">이미 아이디가 있으신가요?</p>
+    </a>
+</form>
+</body>
+</html>
