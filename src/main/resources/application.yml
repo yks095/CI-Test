@@ -6,3 +6,7 @@ spring:
   h2:
     console:
       enabled: true
+
+test:
+  email: 123@email.com
+  password: password

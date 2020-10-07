@@ -52,12 +52,12 @@ public class AccountControllerTest {
     @Autowired
     private AppProperties appProperties;
 
-//    @DisplayName("AppProperties 테스트")
-//    @Test
-//    public void propertiesTest() {
-//        assertThat(appProperties.getEmail()).isEqualTo("123@email.com");
-//        assertThat(appProperties.getPassword()).isEqualTo("password");
-//    }
+    @DisplayName("AppProperties 테스트")
+    @Test
+    public void propertiesTest() {
+        assertThat(appProperties.getEmail()).isEqualTo("123@email.com");
+        assertThat(appProperties.getPassword()).isEqualTo("password");
+    }
 
     @DisplayName("인증 없이 메인화면에 접근하는 테스트")
     @Test
